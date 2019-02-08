@@ -20,7 +20,11 @@
           version: "v3.2",
         });
 
-        return FB;
+        try {
+          FB.CustomerChat.show(true);
+        } catch (error) {
+          console.log(error);
+        }
       };
 
       (function(d, s, id) {
@@ -33,7 +37,11 @@
         fjs.parentNode.insertBefore(js, fjs);
       })(document, "script", "facebook-jssdk");
 
-      window.FB = window.fbAsyncInit();
+      try {
+        FB.CustomerChat.show(true);
+      } catch (error) {
+        console.log(error);
+      }
     </script>
   </body>
 </html>
