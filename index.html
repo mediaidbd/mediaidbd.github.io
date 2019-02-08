@@ -9,22 +9,13 @@
   <body>
     <!-- Load Facebook SDK for JavaScript -->
     <div id="fb-root"></div>
-    <!-- Your customer chat code -->
-    <div class="fb-customerchat" attribution="setup_tool" page_id="425807477917616"></div>
     <script>
       window.fbAsyncInit = function() {
         FB.init({
-          appId: "610626846028031",
           autoLogAppEvents: true,
           xfbml: true,
           version: "v3.2",
         });
-
-        try {
-          FB.CustomerChat.show(true);
-        } catch (error) {
-          console.log(error);
-        }
       };
 
       (function(d, s, id) {
@@ -33,15 +24,11 @@
         if (d.getElementById(id)) return;
         js = d.createElement(s);
         js.id = id;
-        js.src = "https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js";
+        js.src = "https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js#xfbml=1&version=v2.12&autoLogAppEvents=1";
         fjs.parentNode.insertBefore(js, fjs);
       })(document, "script", "facebook-jssdk");
-
-      try {
-        FB.CustomerChat.show(true);
-      } catch (error) {
-        console.log(error);
-      }
     </script>
+    <!-- Your customer chat code -->
+    <div class="fb-customerchat" attribution="setup_tool" page_id="425807477917616"></div>
   </body>
 </html>
